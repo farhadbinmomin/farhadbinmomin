@@ -1,4 +1,6 @@
-import ContactMenu from '@/src/components/ContactMenu';
+import ContactMenu from '@/components/ContactMenu';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 import Link from 'next/link';
 
 const colors = {
@@ -61,36 +63,7 @@ export default function WorksPage() {
         color: colors.fontcolor1,
       }}
     >
-      {/* Header */}
-      <header className="flex items-center justify-between">
-        <Link
-          href="/"
-          className="text-sm font-semibold uppercase tracking-wider transition-opacity hover:opacity-70"
-          style={{ color: colors.fontcolor2 }}
-        >
-          FBM
-        </Link>
-
-        <nav className="flex gap-4 text-sm font-medium uppercase tracking-wider">
-          <Link
-            href="/about"
-            className="transition-opacity hover:opacity-70"
-            style={{ color: colors.fontcolor2 }}
-          >
-            About
-          </Link>
-
-          <Link
-            href="/works"
-            className="transition-opacity hover:opacity-70"
-            style={{ color: colors.fontcolor1 }}
-          >
-            Works
-          </Link>
-
-
-        </nav>
-      </header>
+      <Header />
 
       {/* Projects */}
       <section className="mx-auto max-w-5xl py-20 md:py-32">
@@ -162,26 +135,7 @@ export default function WorksPage() {
       </section>
 
       {/* Footer */}
-      <footer
-        className="border-t pt-6"
-        style={{ borderColor: colors.bordercolor1 }}
-      >
-        <div className="flex items-center justify-between">
-
-          <Link
-            href="/"
-            className="text-xs font-semibold uppercase tracking-widest transition-opacity hover:opacity-70"
-            style={{ color: colors.fontcolor2 }}
-          >
-            ← Back home
-          </Link>
-          <div
-            className="w-fit "
-          >
-            <ContactMenu />
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
     </main>
   );

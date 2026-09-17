@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import ContactMenu from '../components/ContactMenu';
+import Header from '@/components/Header';
+import BackgroundMusic from '@/components/BgMusic';
 
 // Centralized color configuration using CSS variables / Hex codes
 const colors = {
@@ -20,23 +22,9 @@ export default function HomeScreen() {
         color: colors.fontcolor1,
       }}
     >
-      {/* Top right: About (FBM) & Works */}
-      <nav className="z-10 flex justify-end gap-2 text-sm font-medium uppercase tracking-wider">
-        <Link
-          href="/about"
-          className="w-fit transition-colors duration-200 hover:opacity-80"
-          style={{ color: colors.fontcolor2 }}
-        >
-          About
-        </Link>
-        <Link
-          href="/works"
-          className="w-fit transition-colors duration-200 hover:opacity-80"
-          style={{ color: colors.fontcolor2 }}
-        >
-          Works
-        </Link>
-      </nav>
+      <Header isHome={true} />
+      <BackgroundMusic/>
+
 
       {/* Center Screen: Main Name Display */}
       <div className="my-auto flex flex-col justify-center py-12">
@@ -58,7 +46,6 @@ export default function HomeScreen() {
       <footer className="z-10 flex justify-end gap-2">
         <div
           className="w-fit"
-
         >
           <ContactMenu />
         </div>

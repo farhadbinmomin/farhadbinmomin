@@ -1,4 +1,6 @@
-import ContactMenu from '@/src/components/ContactMenu';
+import ContactMenu from '@/components/ContactMenu';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 import Link from 'next/link';
 
 const colors = {
@@ -19,54 +21,20 @@ export default function AboutPage() {
         color: colors.fontcolor1,
       }}
     >
-      {/* Header */}
-      <header className="flex items-center justify-between">
-        <Link
-          href="/"
-          className="text-sm font-semibold uppercase tracking-wider transition-opacity hover:opacity-70"
-          style={{ color: colors.fontcolor2 }}
-        >
-          FBM
-        </Link>
-
-        <nav className="flex gap-4 text-sm font-medium uppercase tracking-wider">
-          <Link
-            href="/about"
-            className="transition-opacity hover:opacity-70"
-            style={{ color: colors.fontcolor1 }}
-          >
-            About
-          </Link>
-
-          <Link
-            href="/works"
-            className="transition-opacity hover:opacity-70"
-            style={{ color: colors.fontcolor2 }}
-          >
-            Works
-          </Link>
-
-
-        </nav>
-      </header>
+      <Header />
 
       {/* Content */}
       <section className="mx-auto max-w-5xl py-20 md:py-32">
-        <p
-          className="mb-6 text-xs font-semibold uppercase tracking-[0.25em]"
-          style={{ color: colors.fontcolor2 }}
-        >
-          About me
-        </p>
+
 
         <h1
           className="max-w-4xl text-5xl font-extrabold leading-[0.95] tracking-tight sm:text-7xl md:text-8xl"
           style={{ color: colors.fontcolor1 }}
         >
-          I build software
+          I Design System
           <br />
           <span style={{ color: colors.fontcolor2 }}>
-            with purpose.
+            with purpose
           </span>
         </h1>
 
@@ -88,23 +56,15 @@ export default function AboutPage() {
             style={{ color: colors.fontcolor2 }}
           >
             <p>
-              I&apos;m Farhad Bin Momin, a Computer Science Engineering
-              student interested in building practical software and
-              understanding how systems work from the ground up.
+              I am a passionate designer with a focus on creating meaningful user experiences.
             </p>
 
             <p>
-              My current focus is full-stack web development, especially
-              TypeScript, React, Next.js, NestJS, Prisma and PostgreSQL.
-              I enjoy working on projects where architecture, data
-              modeling and real-world business requirements come together.
+              I enjoy working on projects where architecture, data modeling, and real-world business requirements come together.
             </p>
 
             <p>
-              Rather than only building small demonstrations, I&apos;m
-              interested in developing systems that can grow — from the
-              database model and backend architecture to the final user
-              experience.
+              I am always eager to learn new technologies and improve my skills. I believe in the power of collaboration and strive to create solutions that make a positive impact.
             </p>
           </div>
         </div>
@@ -132,14 +92,7 @@ export default function AboutPage() {
               className="mt-2"
               style={{ color: colors.fontcolor2 }}
             >
-              Undergraduate Student
-            </p>
-
-            <p
-              className="mt-1 text-sm"
-              style={{ color: colors.fontcolor2 }}
-            >
-              Bangladesh
+              Jagannath University, Dhaka
             </p>
           </div>
         </div>
@@ -160,17 +113,11 @@ export default function AboutPage() {
 
           <div className="flex flex-wrap gap-x-8 gap-y-4">
             {[
-              'TypeScript',
-              'JavaScript',
-              'React',
+
               'Next.js',
-              'Expo',
+              'React-Native',
               'NestJS',
-              'Prisma',
               'PostgreSQL',
-              'Redux',
-              'Zustand',
-              'Git',
               'Docker',
             ].map((technology) => (
               <span
@@ -186,27 +133,7 @@ export default function AboutPage() {
       </section>
 
       {/* Footer */}
-      <footer
-        className="border-t pt-6"
-        style={{ borderColor: colors.bordercolor1 }}
-      >
-        <div className="flex items-center justify-between">
-
-          <Link
-            href="/"
-            className="text-xs font-semibold uppercase tracking-widest transition-opacity hover:opacity-70"
-            style={{ color: colors.fontcolor2 }}
-          >
-            ← Back home
-          </Link>
-          <div
-            className="w-fit "
-           
-          >
-            <ContactMenu />
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
