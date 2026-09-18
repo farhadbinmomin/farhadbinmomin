@@ -97,8 +97,8 @@ export default function ContactMenu() {
       style={{
         backgroundColor: colors.bgcolor2,
         color: colors.fontcolor1,
-        borderColor: colors.bordercolor2,
-        borderWidth: open ? "0px" : "1px",
+        borderColor:open ? colors.bordercolor1 : colors.bordercolor2,
+        borderWidth: open ? "1px" : "1px",
       }}
     >
       {/* Contact button */}
@@ -133,7 +133,7 @@ export default function ContactMenu() {
       {/* Expanded contacts */}
       {open && (
         <div
-          className=" absolute right-full top-1/2 mr-2 -translate-y-1/2 flex items-center gap-2 rounded-lg"
+          className=" absolute right-full top-1/2 mr-2 -translate-y-1/2 flex items-center gap-1 rounded-lg"
           style={{
             color: colors.fontcolor1,
             backgroundColor: colors.bgcolor2,
@@ -144,7 +144,7 @@ export default function ContactMenu() {
           {contacts.map((item) => {
             const content = (
               <>
-                <img src={item.icon.src} alt={item.label} className="h-6 w-6" />
+                <img src={item.icon.src} alt={item.label} className="h-7 w-7" />
 
                 <span
                   className="
