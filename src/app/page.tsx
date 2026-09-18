@@ -4,7 +4,7 @@ import { colors } from "@/assets/lib/colors";
 
 export default function HomeScreen() {
   return (
-    <main className="flex flex-col my-auto w-full overflow-hidden">
+    <main className="flex flex-col my-auto w-full overflow-hidden pl-8">
       <BackgroundMusic />
 
       {/* Full space child container without scrollbars */}

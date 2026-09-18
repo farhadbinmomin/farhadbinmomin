@@ -4,7 +4,7 @@ import { colors } from "@/assets/lib/colors";
 export default function AboutPage() {
   return (
     <main
-      className="min-h-screen w-full px-8 py-8 md:px-16 md:py-12"
+      className="min-h-screen w-full py-8 "
       style={{
         backgroundColor: colors.bgcolor1,
         color: colors.fontcolor1,
@@ -86,39 +86,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Technologies */}
-        <div
-          className="mt-20 grid gap-12 border-t pt-10 md:grid-cols-[1fr_1.5fr]"
-          style={{ borderColor: colors.bordercolor1 }}
-        >
-          <div>
-            <p
-              className="text-xs font-semibold uppercase tracking-widest"
-              style={{ color: colors.fontcolor2 }}
-            >
-              Technologies
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-x-8 gap-y-4">
-            {[
-
-              'Next.js',
-              'React-Native',
-              'NestJS',
-              'PostgreSQL',
-              'Docker',
-            ].map((technology) => (
-              <span
-                key={technology}
-                className="text-sm md:text-base"
-                style={{ color: colors.fontcolor2 }}
-              >
-                {technology}
-              </span>
-            ))}
-          </div>
-        </div>
+       
       </section>
 
     </main>

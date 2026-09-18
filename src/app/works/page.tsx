@@ -45,7 +45,7 @@ const projects = [
 export default function WorksPage() {
   return (
     <main
-      className="min-h-screen w-full px-8 py-8 md:px-16 md:py-12"
+      className="min-h-screen w-full py-8"
       style={{
         backgroundColor: colors.bgcolor1,
         color: colors.fontcolor1,

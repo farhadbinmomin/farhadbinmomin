@@ -1,25 +1,21 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import iconLinkedin from '@/assets/icons/linkedin.png';
-import iconGmail from '@/assets/icons/gmail.png';
-import iconWhatsapp from '@/assets/icons/whatsapp.png';
-import iconCall from '@/assets/icons/call.png';
-import iconContact from '@/assets/icons/contact.png';
-import iconCross from '@/assets/icons/cross.png';
+import iconLinkedin from "@/assets/icons/linkedin.png";
+import iconGmail from "@/assets/icons/gmail.png";
+import iconWhatsapp from "@/assets/icons/whatsapp.png";
+import iconCall from "@/assets/icons/call.png";
+import iconContact from "@/assets/icons/contact.png";
+import iconCross from "@/assets/icons/cross.png";
 
-const colors = {
-  fontcolor1: '#F8FAFC',
-  fontcolor2: '#94A3B8',
-  bordercolor1: '#334155',
-};
+import { colors } from "@/assets/lib/colors";
 
 const CONTACT = {
-  linkedin: 'https://www.linkedin.com/in/farhadbinmomin/',
-  email: 'farhad.codes@gmail.com',
-  whatsapp: '+8801741589749',
-  phone: '+8801741589749',
+  linkedin: "https://www.linkedin.com/in/farhadbinmomin/",
+  email: "farhad.codes@gmail.com",
+  whatsapp: "+8801741589749",
+  phone: "+8801741589749",
 };
 
 export default function ContactMenu() {
@@ -35,12 +31,12 @@ export default function ContactMenu() {
     try {
       await navigator.clipboard.writeText(CONTACT.phone);
     } catch {
-      const textarea = document.createElement('textarea');
+      const textarea = document.createElement("textarea");
 
       textarea.value = CONTACT.phone;
       document.body.appendChild(textarea);
       textarea.select();
-      document.execCommand('copy');
+      document.execCommand("copy");
       textarea.remove();
     }
 
@@ -54,51 +50,57 @@ export default function ContactMenu() {
   const handleEmail = () => {
     const email = CONTACT.email;
 
-    const isMobile =
-      /Android|iPhone|iPad|iPod|Windows Phone/i.test(
-        navigator.userAgent
-      );
+    const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(
+      navigator.userAgent,
+    );
 
     if (isMobile) {
       window.location.href = `googlegmail://co?to=${encodeURIComponent(email)}`;
 
       setTimeout(() => {
-        window.location.href =
-          `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+        window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
       }, 1000);
     } else {
       window.open(
         `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`,
-        '_blank'
+        "_blank",
       );
     }
   };
 
   const contacts = [
     {
-      label: 'LinkedIn',
+      label: "LinkedIn",
       icon: iconLinkedin,
-      action: () => window.open(CONTACT.linkedin, '_blank'),
+      action: () => window.open(CONTACT.linkedin, "_blank"),
     },
     {
-      label: 'Email',
+      label: "Email",
       icon: iconGmail,
       action: handleEmail,
     },
     {
-      label: 'WhatsApp',
+      label: "WhatsApp",
       icon: iconWhatsapp,
       href: `https://wa.me/${CONTACT.whatsapp}`,
     },
     {
-      label: copied ? 'Copied' : 'Call',
+      label: copied ? "Copied" : "Call",
       icon: iconCall,
       action: handleCall,
     },
   ];
 
   return (
-    <div className="relative flex items-center justify-center">
+    <div
+      className="relative flex items-center justify-center rounded-lg "
+      style={{
+        backgroundColor: colors.bgcolor2,
+        color: colors.fontcolor1,
+        borderColor: colors.bordercolor2,
+        borderWidth: open ? "0px" : "1px",
+      }}
+    >
       {/* Contact button */}
       <button
         onClick={() => setOpen((value) => !value)}
@@ -111,17 +113,15 @@ export default function ContactMenu() {
           {open ? (
             <img
               src={iconCross.src}
-              color={colors.fontcolor2}
               alt="Close"
-              className="h-6 w-6 brightness-0 invert"
+              className="h-6 w-6 p-1 brightness-0 invert"
             />
           ) : (
-            <div className='flex gap-2 items-center'>
+            <div className="flex gap-2 items-center">
               <p>Contact</p>
 
               <img
                 src={iconContact.src}
-                color={colors.fontcolor2}
                 alt="Contacts"
                 className="h-6 w-6 brightness-0 invert"
               />
@@ -133,17 +133,18 @@ export default function ContactMenu() {
       {/* Expanded contacts */}
       {open && (
         <div
-          className=" absolute right-full top-1/2 mr-2 -translate-y-1/2 flex items-center gap-2 "
-          style={{ color: colors.fontcolor1 }}
+          className=" absolute right-full top-1/2 mr-2 -translate-y-1/2 flex items-center gap-2 rounded-lg"
+          style={{
+            color: colors.fontcolor1,
+            backgroundColor: colors.bgcolor2,
+            // borderColor: colors.bordercolor2,
+            // borderWidth: "1px",
+          }}
         >
           {contacts.map((item) => {
             const content = (
               <>
-                <img
-                  src={item.icon.src}
-                  alt={item.label}
-                  className="h-6 w-6"
-                />
+                <img src={item.icon.src} alt={item.label} className="h-6 w-6" />
 
                 <span
                   className="
