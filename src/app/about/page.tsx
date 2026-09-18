@@ -1,16 +1,5 @@
-import ContactMenu from '@/components/ContactMenu';
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import Link from 'next/link';
+import { colors } from "@/assets/lib/colors";
 
-const colors = {
-  bgcolor1: '#0F172A',
-  bgcolor2: '#1E293B',
-  fontcolor1: '#F8FAFC',
-  fontcolor2: '#94A3B8',
-  bordercolor1: '#334155',
-  bordercolor2: '#475569',
-};
 
 export default function AboutPage() {
   return (
@@ -21,7 +10,7 @@ export default function AboutPage() {
         color: colors.fontcolor1,
       }}
     >
-      <Header />
+    
 
       {/* Content */}
       <section className="mx-auto max-w-5xl py-20 md:py-32">
@@ -132,8 +121,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <Footer />
     </main>
   );
 }

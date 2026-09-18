@@ -1,55 +1,26 @@
-import Link from 'next/link';
-import ContactMenu from '../components/ContactMenu';
-import Header from '@/components/Header';
-import BackgroundMusic from '@/components/BgMusic';
-
-// Centralized color configuration using CSS variables / Hex codes
-const colors = {
-  bgcolor1: '#0F172A',     // Primary background color
-  bgcolor2: '#1E293B',     // Secondary background/accent surface
-  fontcolor1: '#F8FAFC',   // Main headings and primary text
-  fontcolor2: '#94A3B8',   // Secondary text/subtitles
-  bordercolor1: '#334155', // Primary borders
-  bordercolor2: '#475569', // Secondary/hover borders
-};
+import Header from "@/components/Header";
+import BackgroundMusic from "@/components/BgMusic";
+import { colors } from "@/assets/lib/colors";
 
 export default function HomeScreen() {
   return (
-    <main
-      className="relative flex min-h-screen w-full flex-col justify-between p-8 md:p-16 select-none transition-colors duration-300"
-      style={{
-        backgroundColor: colors.bgcolor1,
-        color: colors.fontcolor1,
-      }}
-    >
-      <Header isHome={true} />
-      <BackgroundMusic/>
-
-
+    <main className=" flex flex-col justify-between max-h-dvh my-auto w-full overflow-hidden ">
       {/* Center Screen: Main Name Display */}
-      <div className="my-auto flex flex-col justify-center py-12">
+      <BackgroundMusic />
+      <div className="my-auto flex flex-col justify-center py-6 select-none">
         <h1
-          className="text-6xl sm:text-8xl md:text-9xl font-extrabold tracking-tight leading-none"
+          className="text-[12vw] md:text-[8rem] font-extrabold tracking-tight leading-none break-words"
           style={{ color: colors.fontcolor1 }}
         >
           Farhad
         </h1>
         <h1
-          className="text-6xl sm:text-8xl md:text-9xl font-extrabold tracking-tight leading-none mt-2"
+          className="text-[12vw] md:text-[8rem] font-extrabold tracking-tight leading-none mt-2 break-words"
           style={{ color: colors.fontcolor2 }}
         >
           Bin Momin
         </h1>
       </div>
-
-      {/* Bottom right Contacts */}
-      <footer className="z-10 flex justify-end gap-2">
-        <div
-          className="w-fit"
-        >
-          <ContactMenu />
-        </div>
-      </footer>
     </main>
   );
 }

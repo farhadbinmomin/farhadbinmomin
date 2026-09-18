@@ -98,7 +98,7 @@ export default function ContactMenu() {
   ];
 
   return (
-    <div className="relative">
+    <div className="relative flex items-center justify-center">
       {/* Contact button */}
       <button
         onClick={() => setOpen((value) => !value)}

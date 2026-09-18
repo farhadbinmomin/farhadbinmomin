@@ -1,16 +1,4 @@
-import ContactMenu from '@/components/ContactMenu';
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import Link from 'next/link';
-
-const colors = {
-  bgcolor1: '#0F172A',
-  bgcolor2: '#1E293B',
-  fontcolor1: '#F8FAFC',
-  fontcolor2: '#94A3B8',
-  bordercolor1: '#334155',
-  bordercolor2: '#475569',
-};
+import { colors } from "@/assets/lib/colors";
 
 const projects = [
   {
@@ -63,7 +51,7 @@ export default function WorksPage() {
         color: colors.fontcolor1,
       }}
     >
-      <Header />
+    
 
       {/* Projects */}
       <section className="mx-auto max-w-5xl py-20 md:py-32">
@@ -134,8 +122,7 @@ export default function WorksPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <Footer />
+     
 
     </main>
   );

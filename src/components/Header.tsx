@@ -1,32 +1,27 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import iconHome from "@/assets/icons/home.png";
+import { colors } from "@/assets/lib/colors";
 
-import iconHome from '@/assets/icons/home.png';
-
-const colors = {
-  fontcolor1: '#F8FAFC',
-  fontcolor2: '#94A3B8',
-};
-
-export default function Header({ isHome = false }: { isHome?: boolean }) {
+export default function Header() {
   const pathname = usePathname();
 
-  const isAbout = pathname === '/about';
-  const isWorks = pathname === '/works';
+  const isHomePage = pathname === "/";
+  const isAbout = pathname === "/about";
+  const isWorks = pathname === "/works";
 
   return (
     <header
       className="
-        fixed top-0 left-0 z-50
-        flex w-full items-center justify-between
-        px-8 py-8
-        md:px-16 md:py-8
-      "
+    sticky top-0 z-50
+    flex w-full items-center justify-between
+    backdrop-blur-md
+  "
     >
       {/* Home */}
-      {!isHome ? (
+      {!isHomePage ? (
         <Link
           href="/"
           aria-label="Home"
@@ -46,12 +41,11 @@ export default function Header({ isHome = false }: { isHome?: boolean }) {
       <nav className="flex gap-4 text-sm uppercase tracking-wider">
         <Link
           href="/about"
-          className={`transition - opacity hover: opacity - 70 ${isAbout ? 'font-bold' : 'font-medium'
-            } `}
+          className={`transition - opacity hover: opacity - 70 ${
+            isAbout ? "font-bold" : "font-medium"
+          } `}
           style={{
-            color: isAbout
-              ? colors.fontcolor1
-              : colors.fontcolor2,
+            color: isAbout ? colors.fontcolor1 : colors.fontcolor2,
           }}
         >
           FBM
@@ -59,12 +53,11 @@ export default function Header({ isHome = false }: { isHome?: boolean }) {
 
         <Link
           href="/works"
-          className={`transition - opacity hover: opacity - 70 ${isWorks ? 'font-bold' : 'font-medium'
-            } `}
+          className={`transition - opacity hover: opacity - 70 ${
+            isWorks ? "font-bold" : "font-medium"
+          } `}
           style={{
-            color: isWorks
-              ? colors.fontcolor1
-              : colors.fontcolor2,
+            color: isWorks ? colors.fontcolor1 : colors.fontcolor2,
           }}
         >
           Works

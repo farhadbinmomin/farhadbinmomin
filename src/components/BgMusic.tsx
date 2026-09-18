@@ -1,21 +1,13 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState, useCallback } from 'react';
-
-const colors = {
-  bgcolor1: '#0F172A',
-  bgcolor2: '#1E293B',
-  fontcolor1: '#F8FAFC',
-  fontcolor2: '#94A3B8',
-  bordercolor1: '#334155',
-  bordercolor2: '#475569',
-};
+import { colors } from "@/assets/lib/colors";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 const SpeakerIcon = ({ isUnmuted }: { isUnmuted: boolean }) => (
   <svg
     viewBox="0 0 24 24"
     fill="none"
-    className="h-5 w-5"
+    className="h-5 w-5 block translate-x-[-1px] translate-y-[0.5px]"
     stroke="currentColor"
     strokeWidth="1.5"
     strokeLinecap="round"
@@ -54,16 +46,16 @@ export default function BackgroundMusic() {
     audio.volume = 0.3;
     audio.muted = true;
 
-    audio.play().catch(() => { });
+    audio.play().catch(() => {});
 
-    audio.addEventListener('volumechange', syncMuteState);
-    audio.addEventListener('play', syncMuteState);
-    audio.addEventListener('pause', syncMuteState);
+    audio.addEventListener("volumechange", syncMuteState);
+    audio.addEventListener("play", syncMuteState);
+    audio.addEventListener("pause", syncMuteState);
 
     return () => {
-      audio.removeEventListener('volumechange', syncMuteState);
-      audio.removeEventListener('play', syncMuteState);
-      audio.removeEventListener('pause', syncMuteState);
+      audio.removeEventListener("volumechange", syncMuteState);
+      audio.removeEventListener("play", syncMuteState);
+      audio.removeEventListener("pause", syncMuteState);
     };
   }, [syncMuteState]);
 
@@ -77,7 +69,7 @@ export default function BackgroundMusic() {
       try {
         await audio.play();
       } catch (err) {
-        console.error('Audio play error:', err);
+        console.error("Audio play error:", err);
       }
     }
 
@@ -99,38 +91,39 @@ export default function BackgroundMusic() {
           }
         }
 
-        .wave-container {
-          position: fixed;
-          bottom: 2rem;
-          right: 2rem;
-          width: 3rem;
-          height: 3rem;
-          pointer-events: none;
-          z-index: 99999;
-        }
-
         .wave-ring {
           position: absolute;
-          inset: 0;
+          width: 100%;
+          height: 100%;
           border-radius: 50%;
           border: 2px solid ${colors.fontcolor2};
           box-sizing: border-box;
           pointer-events: none;
+          transform-origin: center center;
           will-change: transform, opacity;
           animation: waveExpand 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
         }
 
-        .wave-ring-1 { animation-delay: 0s; }
-        .wave-ring-2 { animation-delay: -0.8s; }
-        .wave-ring-3 { animation-delay: -1.6s; }
-        .wave-ring-4 { animation-delay: -2.4s; }
-        .wave-ring-5 { animation-delay: -3.2s; }
+        .wave-ring-1 {
+          animation-delay: 0s;
+        }
+        .wave-ring-2 {
+          animation-delay: -0.8s;
+        }
+        .wave-ring-3 {
+          animation-delay: -1.6s;
+        }
+        .wave-ring-4 {
+          animation-delay: -2.4s;
+        }
+        .wave-ring-5 {
+          animation-delay: -3.2s;
+        }
       `}</style>
 
       <audio ref={audioRef} src="/duffSound.mp3" preload="auto" loop muted />
 
-      {/* Wave Container - High z-index explicitly outside button scope */}
-      <div className="wave-container">
+      <div className="absolute bottom-16 right-4 z-50 h-12 w-12 flex items-center justify-center pointer-events-none">
         {isUnmuted && (
           <>
             <div className="wave-ring wave-ring-1" />
@@ -145,14 +138,16 @@ export default function BackgroundMusic() {
         <button
           type="button"
           onClick={toggleMute}
-          className="relative z-10 grid place-items-center h-12 w-12 rounded-full cursor-pointer pointer-events-auto transition-transform duration-200 hover:scale-105 active:scale-95 shadow-xl"
+          className="relative z-10 flex items-center justify-center h-12 w-12 rounded-full cursor-pointer pointer-events-auto transition-transform duration-200 hover:scale-105 active:scale-95 shadow-xl p-0"
           style={{
             backgroundColor: colors.bgcolor2,
             color: isUnmuted ? colors.fontcolor1 : colors.fontcolor2,
             borderColor: isUnmuted ? colors.bordercolor2 : colors.bordercolor1,
-            borderWidth: '1px',
+            borderWidth: "1px",
           }}
-          aria-label={isUnmuted ? 'Mute background music' : 'Unmute background music'}
+          aria-label={
+            isUnmuted ? "Mute background music" : "Unmute background music"
+          }
         >
           <SpeakerIcon isUnmuted={isUnmuted} />
         </button>
