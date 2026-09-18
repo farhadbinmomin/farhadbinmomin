@@ -28,7 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body
         className="relative min-h-full max-w-5xl mx-auto flex flex-col p-4
-        
+        overflow-hidden
         "
         style={{
           backgroundColor: colors.bgcolor1,
