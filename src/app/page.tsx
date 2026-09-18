@@ -4,10 +4,11 @@ import { colors } from "@/assets/lib/colors";
 
 export default function HomeScreen() {
   return (
-    <main className=" flex flex-col justify-between max-h-dvh my-auto w-full overflow-hidden ">
-      {/* Center Screen: Main Name Display */}
+    <main className="flex flex-col my-auto w-full overflow-hidden">
       <BackgroundMusic />
-      <div className="my-auto flex flex-col justify-center py-6 select-none">
+
+      {/* Full space child container without scrollbars */}
+      <div className="flex-1 h-full w-full flex flex-col justify-center py-6 select-none overflow-hidden">
         <h1
           className="text-[12vw] md:text-[8rem] font-extrabold tracking-tight leading-none break-words"
           style={{ color: colors.fontcolor1 }}

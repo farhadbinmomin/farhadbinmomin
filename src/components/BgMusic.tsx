@@ -80,61 +80,63 @@ export default function BackgroundMusic() {
   return (
     <>
       <style jsx global>{`
-        @keyframes waveExpand {
+        @keyframes cornerExpand {
           0% {
-            transform: scale(1);
+            width: 30px;
+            height: 30px;
             opacity: 0.8;
           }
           100% {
-            transform: scale(12);
+            width: 350px;
+            height: 350px;
             opacity: 0;
           }
         }
 
-        .wave-ring {
+        .corner-wave {
           position: absolute;
-          width: 100%;
-          height: 100%;
-          border-radius: 50%;
-          border: 2px solid ${colors.fontcolor2};
-          box-sizing: border-box;
+          bottom: 0;
+          right: 0;
+          border-top: 2px solid ${colors.fontcolor2};
+          border-left: 2px solid ${colors.fontcolor2};
+          border-top-left-radius: 100%;
           pointer-events: none;
-          transform-origin: center center;
-          will-change: transform, opacity;
-          animation: waveExpand 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+          box-sizing: border-box;
+          will-change: width, height, opacity;
+          animation: cornerExpand 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
         }
 
-        .wave-ring-1 {
+        .corner-wave-1 {
           animation-delay: 0s;
         }
-        .wave-ring-2 {
+        .corner-wave-2 {
           animation-delay: -0.8s;
         }
-        .wave-ring-3 {
+        .corner-wave-3 {
           animation-delay: -1.6s;
         }
-        .wave-ring-4 {
+        .corner-wave-4 {
           animation-delay: -2.4s;
         }
-        .wave-ring-5 {
+        .corner-wave-5 {
           animation-delay: -3.2s;
         }
       `}</style>
 
       <audio ref={audioRef} src="/duffSound.mp3" preload="auto" loop muted />
 
-      <div className="absolute bottom-16 right-4 z-50 h-12 w-12 flex items-center justify-center pointer-events-none">
+      {/* Button & Waves Container */}
+      <div className="absolute bottom-16 right-4 z-50 h-12 w-12 flex items-center justify-center">
         {isUnmuted && (
-          <>
-            <div className="wave-ring wave-ring-1" />
-            <div className="wave-ring wave-ring-2" />
-            <div className="wave-ring wave-ring-3" />
-            <div className="wave-ring wave-ring-4" />
-            <div className="wave-ring wave-ring-5" />
-          </>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="corner-wave corner-wave-1" />
+            <div className="corner-wave corner-wave-2" />
+            <div className="corner-wave corner-wave-3" />
+            <div className="corner-wave corner-wave-4" />
+            <div className="corner-wave corner-wave-5" />
+          </div>
         )}
 
-        {/* Sound Toggle Button */}
         <button
           type="button"
           onClick={toggleMute}
