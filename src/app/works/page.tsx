@@ -2,43 +2,28 @@ import { colors } from "@/assets/lib/colors";
 
 const projects = [
   {
-    number: '01',
-    title: 'MultiShopEngine',
+    number: "01",
+    title: "MultiShopEngine",
     description:
-      'A multi-tenant e-commerce engine designed to power multiple customer shops from a shared backend architecture.',
-    technologies: [
-      'TypeScript',
-      'NestJS',
-      'Prisma',
-      'PostgreSQL',
-    ],
-    status: 'Building',
+      "A multi-tenant e-commerce engine designed to power multiple customer shops from a shared backend architecture.",
+    technologies: ["TypeScript", "NestJS", "Prisma", "PostgreSQL"],
+    status: "Building",
   },
   {
-    number: '02',
-    title: 'Multi-Mess Management Platform',
+    number: "02",
+    title: "Multi-Mess Management Platform",
     description:
-      'A tenant-oriented management platform for managing members, meals, expenses, deposits and monthly accounting.',
-    technologies: [
-      'TypeScript',
-      'NestJS',
-      'Prisma',
-      'PostgreSQL',
-    ],
-    status: 'Designing',
+      "A tenant-oriented management platform for managing members, meals, expenses, deposits and monthly accounting.",
+    technologies: ["TypeScript", "NestJS", "Prisma", "PostgreSQL"],
+    status: "Designing",
   },
   {
-    number: '03',
-    title: 'Talk with AI',
+    number: "03",
+    title: "Talk with AI",
     description:
-      'A mobile AI conversation and learning application focused on practice, history and progress tracking.',
-    technologies: [
-      'Expo',
-      'React Native',
-      'TypeScript',
-      'AI',
-    ],
-    status: 'Exploring',
+      "A mobile AI conversation and learning application focused on practice, history and progress tracking.",
+    technologies: ["Expo", "React Native", "TypeScript", "AI"],
+    status: "Exploring",
   },
 ];
 
@@ -51,10 +36,8 @@ export default function WorksPage() {
         color: colors.fontcolor1,
       }}
     >
-    
-
       {/* Projects */}
-      <section className="mx-auto max-w-5xl py-20 md:py-32">
+      <section className="mx-auto py-20 md:py-32">
         <p
           className="mb-6 text-xs font-semibold uppercase tracking-[0.25em]"
           style={{ color: colors.fontcolor2 }}
@@ -65,9 +48,7 @@ export default function WorksPage() {
         <h1 className="text-5xl font-extrabold tracking-tight sm:text-7xl md:text-8xl">
           Things I&apos;m
           <br />
-          <span style={{ color: colors.fontcolor2 }}>
-            building.
-          </span>
+          <span style={{ color: colors.fontcolor2 }}>building.</span>
         </h1>
 
         <div className="mt-20">
@@ -117,13 +98,8 @@ export default function WorksPage() {
               </span>
             </article>
           ))}
-
-
         </div>
       </section>
-
-     
-
     </main>
   );
 }

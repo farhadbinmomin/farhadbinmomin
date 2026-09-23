@@ -13,11 +13,11 @@ export default function AboutPage() {
     
 
       {/* Content */}
-      <section className="mx-auto max-w-5xl py-20 md:py-32">
+      <section className="mx-auto py-20 md:py-32">
 
 
         <h1
-          className="max-w-4xl text-5xl font-extrabold leading-[0.95] tracking-tight sm:text-7xl md:text-8xl"
+          className=" text-5xl font-extrabold leading-[0.95] tracking-tight sm:text-7xl md:text-8xl"
           style={{ color: colors.fontcolor1 }}
         >
           I Design System

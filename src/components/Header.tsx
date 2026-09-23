@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import iconHome from "@/assets/icons/home.png";
+import iconDownload from "@/assets/icons/download.png";
 import { colors } from "@/assets/lib/colors";
 
 export default function Header() {
@@ -13,13 +15,7 @@ export default function Header() {
   const isWorks = pathname === "/works";
 
   return (
-    <header
-      className="
-    sticky top-0 z-50
-    flex w-full items-center justify-between
-    backdrop-blur-md
-  "
-    >
+    <header className="sticky top-0 z-50 flex w-full items-center justify-between backdrop-blur-md py-4">
       {/* Home */}
       {!isHomePage ? (
         <Link
@@ -27,10 +23,12 @@ export default function Header() {
           aria-label="Home"
           className="transition-opacity hover:opacity-70"
         >
-          <img
-            src={iconHome.src}
+          <Image
+            src={iconHome}
             alt="Home"
-            className="h-6 w-6 brightness-0 invert"
+            width={24}
+            height={24}
+            className="brightness-0 invert"
           />
         </Link>
       ) : (
@@ -38,12 +36,33 @@ export default function Header() {
       )}
 
       {/* Navigation */}
-      <nav className="flex gap-4 text-sm uppercase tracking-wider">
+      <nav className="flex gap-4 text-sm uppercase tracking-wider items-center">
+        {/* CV Download Button */}
+        <a
+          href="/Farhad_binMomin_SystemDesigner.pdf"
+          download
+          className="flex items-center gap-1.5 px-3 py-1 rounded-md border transition-opacity hover:opacity-70 font-medium"
+          style={{
+            color: colors.fontcolor2,
+            borderColor: colors.bordercolor1,
+          }}
+        >
+          CV
+          <Image
+            src={iconDownload}
+            alt="Download"
+            width={16}
+            height={16}
+            className="brightness-0 invert"
+            color={colors.fontcolor2}
+          />
+        </a>
+
         <Link
           href="/about"
-          className={`transition - opacity hover: opacity - 70 ${
+          className={`transition-opacity hover:opacity-70 ${
             isAbout ? "font-bold" : "font-medium"
-          } `}
+          }`}
           style={{
             color: isAbout ? colors.fontcolor1 : colors.fontcolor2,
           }}
@@ -53,9 +72,9 @@ export default function Header() {
 
         <Link
           href="/works"
-          className={`transition - opacity hover: opacity - 70 ${
+          className={`transition-opacity hover:opacity-70 ${
             isWorks ? "font-bold" : "font-medium"
-          } `}
+          }`}
           style={{
             color: isWorks ? colors.fontcolor1 : colors.fontcolor2,
           }}
