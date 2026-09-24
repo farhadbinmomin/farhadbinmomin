@@ -37,26 +37,6 @@ export default function Header() {
 
       {/* Navigation */}
       <nav className="flex gap-4 text-sm uppercase tracking-wider items-center">
-        {/* CV Download Button */}
-        <a
-          href="/Farhad_binMomin_SystemDesigner.pdf"
-          download
-          className="flex items-center gap-1.5 px-3 py-1 rounded-md border transition-opacity hover:opacity-70 font-medium"
-          style={{
-            color: colors.fontcolor2,
-            borderColor: colors.bordercolor1,
-          }}
-        >
-          CV
-          <Image
-            src={iconDownload}
-            alt="Download"
-            width={16}
-            height={16}
-            className="brightness-0 invert"
-            color={colors.fontcolor2}
-          />
-        </a>
 
         <Link
           href="/about"

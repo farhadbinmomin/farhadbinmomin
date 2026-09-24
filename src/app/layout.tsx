@@ -4,6 +4,7 @@ import "./globals.css";
 import { colors } from "@/assets/lib/colors";
 import ContactMenu from "@/components/ContactMenu";
 import Header from "@/components/Header";
+import CV from "@/components/CV";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +40,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
         {/* Sticky container stays within the max-w-4xl boundary */}
         <div className="sticky bottom-4 align-self-end ml-auto z-50">
+          <div className=" flex flex-col justify-end items-end gap-2">
+          <CV/>
           <ContactMenu />
+          </div>
         </div>
       </body>
     </html>
