@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import iconHome from "@/assets/icons/home.png";
-import iconDownload from "@/assets/icons/download.png";
 import { colors } from "@/assets/lib/colors";
 
 export default function Header() {
@@ -14,8 +13,18 @@ export default function Header() {
   const isAbout = pathname === "/about";
   const isWorks = pathname === "/works";
 
+  const navList = [
+    { name: "FBM", href: "/about" },
+    { name: "Works", href: "/works" },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 flex w-full items-center justify-between backdrop-blur-md py-4">
+    <header
+      className="sticky top-0 z-50 flex w-full items-center justify-between pt-4"
+      style={{
+        backgroundColor: colors.bgcolor1,
+      }}
+    >
       {/* Home */}
       {!isHomePage ? (
         <Link
@@ -36,31 +45,32 @@ export default function Header() {
       )}
 
       {/* Navigation */}
-      <nav className="flex gap-4 text-sm uppercase tracking-wider items-center">
-
-        <Link
-          href="/about"
-          className={`transition-opacity hover:opacity-70 ${
-            isAbout ? "font-bold" : "font-medium"
-          }`}
-          style={{
-            color: isAbout ? colors.fontcolor1 : colors.fontcolor2,
-          }}
-        >
-          FBM
-        </Link>
-
-        <Link
-          href="/works"
-          className={`transition-opacity hover:opacity-70 ${
-            isWorks ? "font-bold" : "font-medium"
-          }`}
-          style={{
-            color: isWorks ? colors.fontcolor1 : colors.fontcolor2,
-          }}
-        >
-          Works
-        </Link>
+      <nav className="flex gap-2 text-sm uppercase tracking-wider items-center">
+        {navList.map((item) => {
+          const isActive = pathname === item.href;
+          return (
+            <div
+              className="relative max-w-min px-2 py-1 rounded-lg flex justify-center "
+              style={{
+                backgroundColor: isActive ? colors.bgcolor1 : colors.bgcolor2,
+                borderColor: isActive? colors.bordercolor1 : colors.bordercolor2,
+                borderWidth: isActive ? "1px" : "0px",
+              }}
+            >
+              <Link
+                href={item.href}
+                className={`transition-opacity  ${
+                  isActive ? "font-bold" : "font-bold"
+                }`}
+                style={{
+                  color: isActive ? colors.fontcolor1 : colors.fontcolor2,
+                }}
+              >
+                {item.name}
+              </Link>
+            </div>
+          );
+        })}
       </nav>
     </header>
   );

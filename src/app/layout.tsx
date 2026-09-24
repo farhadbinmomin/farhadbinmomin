@@ -41,8 +41,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {/* Sticky container stays within the max-w-4xl boundary */}
         <div className="sticky bottom-4 align-self-end ml-auto z-50">
           <div className=" flex flex-col justify-end items-end gap-2">
-          <CV/>
-          <ContactMenu />
+            <CV />
+            <ContactMenu />
           </div>
         </div>
       </body>
