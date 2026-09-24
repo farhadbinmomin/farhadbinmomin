@@ -21,7 +21,7 @@ export default function CV() {
       >
         {/* Contact button */}
         <a
-          href="/Farhad_binMomin_SystemDesigner.pdf"
+          href="/Farhad_BinMomin_SystemDesigner.pdf"
           download
           className="flex items-center justify-center gap-1 p-2 text-sm font-semibold uppercase hover:opacity-70"
           style={{ color: colors.fontcolor2 }}
