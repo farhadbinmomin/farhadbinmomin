@@ -52,9 +52,11 @@ export default function Header() {
             <div
               className="relative max-w-min px-2 py-1 rounded-lg flex justify-center "
               style={{
-                backgroundColor: isActive ? colors.bgcolor1 : colors.bgcolor2,
-                borderColor: isActive? colors.bordercolor1 : colors.bordercolor2,
-                borderWidth: isActive ? "1px" : "0px",
+                backgroundColor: isActive ? colors.bgcolor2 : colors.bgcolor1,
+                borderColor: isActive
+                  ? colors.bordercolor2
+                  : colors.bordercolor1,
+                borderWidth: isActive ? "2px" : "0.1px",
               }}
             >
               <Link
