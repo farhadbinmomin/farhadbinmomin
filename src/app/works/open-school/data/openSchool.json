@@ -2,57 +2,57 @@
   "title": "Competency-Based Learning System",
   "shortTitle": "Open School",
   "description": "A competency-based learning system that allows students to learn at their own pace and demonstrate mastery of skills.",
-  "href": "/works/openSchool",
+  "href": "/works/open-school",
   "navigation": [
     {
       "number": "01",
       "title": "Problem & Philosophy",
-      "href": "/works/openSchool/problem"
+      "href": "/works/open-school/problem"
     },
     {
       "number": "02",
       "title": "Learning Model",
-      "href": "/works/openSchool/learningModel"
+      "href": "/works/open-school/learning-model"
     },
     {
       "number": "03",
       "title": "Domain Model",
-      "href": "/works/openSchool/domainModel"
+      "href": "/works/open-school/domain-model"
     },
     {
       "number": "04",
       "title": "Architecture",
-      "href": "/works/openSchool/architecture"
+      "href": "/works/open-school/architecture"
     },
     {
       "number": "05",
       "title": "Curriculum & Evaluation",
-      "href": "/works/openSchool/curriculum"
+      "href": "/works/open-school/curriculum"
     },
     {
       "number": "06",
       "title": "Database",
-      "href": "/works/openSchool/database"
+      "href": "/works/open-school/database"
     },
     {
       "number": "07",
       "title": "Key Workflows",
-      "href": "/works/openSchool/workflows"
+      "href": "/works/open-school/workflows"
     },
     {
       "number": "08",
       "title": "Engineering Decisions",
-      "href": "/works/openSchool/decisions"
+      "href": "/works/open-school/decisions"
     },
     {
       "number": "09",
       "title": "Security & Scalability",
-      "href": "/works/openSchool/security"
+      "href": "/works/open-school/security"
     },
     {
       "number": "10",
       "title": "Tech Stack & Status",
-      "href": "/works/openSchool/status"
+      "href": "/works/open-school/status"
     }
   ]
 }
