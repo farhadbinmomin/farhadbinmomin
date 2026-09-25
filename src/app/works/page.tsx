@@ -44,7 +44,7 @@ const projects: Project[] = [
       "A learning system designed around continuous learning and competency evaluation rather than traditional examination-based education.",
     technologies: ["TypeScript", "Next.js", "Tailwind CSS"],
     status: "Designing",
-    href: "/works/openSchool",
+    href: "/works/open-school",
   },
   {
     id: "talk-ai",
