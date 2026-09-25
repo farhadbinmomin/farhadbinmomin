@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import projectMess from "@/app/works/mess/data/mess.json";
-import projectOpenSchool from "@/app/works/openSchool/data/openSchool.json";
+import projectOpenSchool from "@/app/works/open-school/data/openSchool.json";
 const projects = {
   mess: projectMess,
   openSchool: projectOpenSchool,
