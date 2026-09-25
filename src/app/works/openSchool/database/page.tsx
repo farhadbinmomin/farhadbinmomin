@@ -33,7 +33,7 @@ export default function DatabasePage() {
 
         {/* Replace the src with your actual ERD image */}
         <div className="overflow-hidden rounded-lg border border-[#334155] bg-[#1E293B]">
-          <div className="flex min-h-[420px] items-center justify-center p-8">
+          <div className="flex min-h-105 items-center justify-center p-8">
             <div className="w-full max-w-4xl overflow-x-auto">
               <pre className="text-sm leading-7 text-[#F8FAFC]">
                 {`┌──────────────┐
