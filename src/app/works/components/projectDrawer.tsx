@@ -107,7 +107,7 @@ export default function ProjectDrawer({ projectName }: { projectName: ProjectNam
         <nav className="mt-6 space-y-1">
           {/* Overview Link */}
           <Link
-            href="/works/mess"
+            href={project.href}
             className={`group relative flex items-center rounded-md p-2 text-sm transition-colors ${
               pathname === "/works/mess"
                 ? "bg-[#1E293B] font-medium text-[#F8FAFC]"
