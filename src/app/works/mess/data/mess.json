@@ -1,0 +1,48 @@
+{
+  "title": "Multi-Mess Management Platform",
+  "shortTitle": "Multi-Mess Engine",
+  "description": "A multi-tenant management system where Mess is a first-class tenant and operational context.",
+  "href": "/works/mess",
+  "navigation": [
+    {
+      "number": "01",
+      "title": "Domain Model",
+      "href": "/works/mess/domainModel"
+    },
+    {
+      "number": "02",
+      "title": "Architecture",
+      "href": "/works/mess/architecture"
+    },
+    {
+      "number": "03",
+      "title": "Database",
+      "href": "/works/mess/database"
+    },
+    {
+      "number": "04",
+      "title": "Workflows",
+      "href": "/works/mess/workflows"
+    },
+    {
+      "number": "05",
+      "title": "Authorization",
+      "href": "/works/mess/authorization"
+    },
+    {
+      "number": "06",
+      "title": "Accounting",
+      "href": "/works/mess/accounting"
+    },
+    {
+      "number": "07",
+      "title": "Engineering Decisions",
+      "href": "/works/mess/decisions"
+    },
+    {
+      "number": "08",
+      "title": "Implementation",
+      "href": "/works/mess/implementation"
+    }
+  ]
+}

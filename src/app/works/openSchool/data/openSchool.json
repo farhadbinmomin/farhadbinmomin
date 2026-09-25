@@ -1,0 +1,58 @@
+{
+  "title": "Competency-Based Learning System",
+  "shortTitle": "Open School",
+  "description": "A competency-based learning system that allows students to learn at their own pace and demonstrate mastery of skills.",
+  "href": "/works/openSchool",
+  "navigation": [
+    {
+      "number": "01",
+      "title": "Problem & Philosophy",
+      "href": "/works/openSchool/problem"
+    },
+    {
+      "number": "02",
+      "title": "Learning Model",
+      "href": "/works/openSchool/learningModel"
+    },
+    {
+      "number": "03",
+      "title": "Domain Model",
+      "href": "/works/openSchool/domainModel"
+    },
+    {
+      "number": "04",
+      "title": "Architecture",
+      "href": "/works/openSchool/architecture"
+    },
+    {
+      "number": "05",
+      "title": "Curriculum & Evaluation",
+      "href": "/works/openSchool/curriculum"
+    },
+    {
+      "number": "06",
+      "title": "Database",
+      "href": "/works/openSchool/database"
+    },
+    {
+      "number": "07",
+      "title": "Key Workflows",
+      "href": "/works/openSchool/workflows"
+    },
+    {
+      "number": "08",
+      "title": "Engineering Decisions",
+      "href": "/works/openSchool/decisions"
+    },
+    {
+      "number": "09",
+      "title": "Security & Scalability",
+      "href": "/works/openSchool/security"
+    },
+    {
+      "number": "10",
+      "title": "Tech Stack & Status",
+      "href": "/works/openSchool/status"
+    }
+  ]
+}

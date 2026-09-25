@@ -10,13 +10,13 @@ export default function HomeScreen() {
       {/* Full space child container without scrollbars */}
       <div className="flex-1 h-full w-full flex flex-col justify-center py-6 select-none overflow-hidden">
         <h1
-          className="text-[12vw] md:text-[8rem] font-extrabold tracking-tight leading-none break-words uppercase"
+          className="text-[12vw] md:text-[8rem] font-extrabold tracking-tight leading-none wrap-break uppercase"
           style={{ color: colors.fontcolor1 }}
         >
           Farhad
         </h1>
         <h1
-          className="text-[12vw] md:text-[8rem] font-extrabold tracking-tight leading-none mt-2 break-words"
+          className="text-[12vw] md:text-[8rem] font-extrabold tracking-tight leading-none mt-2 wrap-break"
           style={{ color: colors.fontcolor2 }}
         >
           Bin Momin

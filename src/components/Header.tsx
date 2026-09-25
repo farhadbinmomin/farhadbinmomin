@@ -56,7 +56,7 @@ export default function Header() {
                 borderColor: isActive
                   ? colors.bordercolor2
                   : colors.bordercolor1,
-                borderWidth: isActive ? "2px" : "0.1px",
+                borderWidth: isActive ? "2px" : "1px",
               }}
             >
               <Link
